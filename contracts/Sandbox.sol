@@ -1,6 +1,22 @@
 pragma solidity ^0.8.0;
 
 contract Sandbox {
+  uint public balanceReceived;
+
+  function receiveMoney() public payable {
+    balanceReceived += msg.value;
+  }
+
+  function withdrawMoney() public {
+    address payable to = msg.sender;
+
+    to.transfer(this.getBalance());
+  }
+
+  function withdrawMoneyTo(address payable _to) public {
+    _to.transfer(this.getBalance());
+  }
+
   address public myAddress;
 
   function setAddress(address _address) public {
@@ -8,7 +24,7 @@ contract Sandbox {
   }
 
   function getBalanceOfAddress() public view returns(uint) {
-    return myAddress.balance;
+    return address(this).balance;
   }
 
   string public myString;
