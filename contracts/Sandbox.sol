@@ -3,6 +3,17 @@
 pragma solidity ^0.8.0;
 
 contract Sandbox {
+  mapping(uint => bool) public myMapping;
+  mapping(address => bool) public myAddressMapping;
+
+  function setValue(uint _index) public {
+    myMapping[_index] = true;
+  }
+
+  function setMyAddressToTrue() public {
+    myAddressMapping[msg.sender] = true;
+  }
+
   uint public balanceReceived;
 
   function receiveMoney() public payable {
@@ -10,9 +21,8 @@ contract Sandbox {
   }
 
   function withdrawMoney() public {
-    address payable to = msg.sender;
-
-    to.transfer(this.getBalance());
+    // address payable to = msg.sender;
+    // to.transfer(this.getBalance());
   }
 
   function withdrawMoneyTo(address payable _to) public {
