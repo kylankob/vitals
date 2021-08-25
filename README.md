@@ -13,3 +13,17 @@ Vitals is a Electronic Health Record Tracker built on the Ethereum blockchain.
 - Kylan Koblitz
 - Victor Lau
 - Aakaash Meduri
+
+## Setup
+
+Copy the .env.example into .env. Set up the required keys.
+
+Install Modules
+```bash
+npm install
+```
+
+Run Tests
+```
+hh test
+```
