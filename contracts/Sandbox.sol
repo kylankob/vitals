@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: UNLICENSED
+
 pragma solidity ^0.8.0;
 
 contract Sandbox {
@@ -23,7 +25,7 @@ contract Sandbox {
     myAddress = _address;
   }
 
-  function getBalanceOfAddress() public view returns(uint) {
+  function getBalance() public view returns(uint) {
     return address(this).balance;
   }
 
@@ -47,7 +49,7 @@ contract Sandbox {
 
   uint8 public myUint8;
 
-  function incrementUint() pulbic {
+  function incrementUint() public {
     myUint8++;
   }
 
